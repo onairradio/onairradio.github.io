@@ -14,11 +14,6 @@ class: title, center, middle, inverse
 
 ---
 class: center, middle, inverse, full-text
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/kERdJyF-7RM" frameborder="0" allowfullscreen></iframe>
-
----
-class: center, middle, inverse, full-text
 .full-image[![](IMG_20140910_130116.jpg)]
 
 ---
@@ -78,7 +73,7 @@ class:  middle, inverse, full-text
 ---
 class:  middle, inverse, full-text
 
-# 방금그라디오 소스
+# code
 - [onair.py source](https://github.com/onairradio/onairradio.github.io/blob/master/onair.py)
 
     ```python
@@ -98,6 +93,11 @@ class:  middle, inverse, full-text
     for song in reversed(data['songList']):
         if song['channel']['channelType'] ...
     ```
+---
+class: center, middle, inverse, full-text
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/kERdJyF-7RM" frameborder="0" allowfullscreen></iframe>
+
 ---
 class: center, middle, inverse, full-text
 
