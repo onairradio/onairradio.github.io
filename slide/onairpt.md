@@ -12,6 +12,10 @@ class: title, center, middle, inverse
 - [onairradio](https://github.com/dubu/onairradio) on YouTube
 ]
 
+---
+class: center, middle, inverse, full-text
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/kERdJyF-7RM" frameborder="0" allowfullscreen></iframe>
 
 ---
 class: center, middle, inverse, full-text
@@ -68,33 +72,19 @@ class:  middle, inverse, full-text
 - [onair.py source](https://github.com/onairradio/onairradio.github.io/blob/master/onair.py)
 
     ```python
-    ....
+    ...
     url = 'http://music.daum.net/onair/songlist.json?type=top&searchDate='
     resp = requests.post(url=url)
     data = json.loads(resp.text)
 
-    while True:
-        if isHolding:
-            lcd.cls()
-            lcd.text("Hold")
-        if GPIO.input(14) == 1 and old_val == 0:
-            print("Button 1 pressed")
-            isHolding = not isHolding
-            old_val = 1
-            time.sleep(1)
-        else :
-            old_val = 0
+    ...
 
-        playList = []
-        if time.time() - t > 10 :
-            t = time.time()
-            print("refresh")
-            resp = requests.post(url=url)
-            data = json.loads(resp.text)
+    resp = requests.post(url=url)
+    data = json.loads(resp.text)
 
-            for song in reversed(data['songList']):
-                if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 3라디오", "MBC FM4U"]:
-                    continue
+    for song in reversed(data['songList']):
+        if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 3라디오", "MBC FM4U"]:
+            continue
     ...
     ```
 
@@ -102,9 +92,9 @@ class:  middle, inverse, full-text
 class:  middle, inverse, full-text
 # 작업
 
-- pcd8544 Python library 설치 https://github.com/XavierBerger/pcd8544
+- [pcd8544 Python library 설치](https://github.com/XavierBerger/pcd8544)
 - pil 라이브러리 python2 에서만 실행.
-- python3 사용하기 위해 Pillow lib 설치.http://pillow.readthedocs.org/en/latest/installation.html
+- [python3 사용하기 위해 Pillow lib 설치](http://pillow.readthedocs.org/en/latest/installation.html)
 - 각종 에러가 발생하는데 lcd.py 적절히 수정해 준다.
 - 한글폰트 설치 sudo apt-get install ttf-unfonts-core
 - 그 밖에 각종 설치
@@ -115,26 +105,6 @@ class:  middle, inverse, full-text
     sudo pip-3.2 install spidev
     sudo pip-3.2 install Pillow
     ```
----
-class:  middle, inverse, full-text
-# 몇 가지 트릭
-
-- 한글 romanize하기
-
-    ```python
-    >>> from unidecode import unidecode
-    >>> unidecode(u'파이콘')
-    'paikon'
-    ```
-
-- 한자, 한글, 영문가 섞여 있는 경우
-
-    - Multilingual NLP에서 제안하는 다양한 접근법이 있습니다.
-    - 간단한 꼼수 한 가지는: "한자 전처리, 영문 후처리"
-        - 한자는 transliterate하고 (ex: '丁新闻' -> 정신문)
-        - 한국어 처리를 한 후에 (ex: POS tagging)
-        - 영문으로 분류된 tag에 한해 따로 stemming 등을 거침
-
 ---
 class: center, middle, inverse, full-text
 
