@@ -329,8 +329,6 @@ data = json.loads(resp.text)
 
 while True:
     if isHolding:
-        #lcd_byte(LCD_LINE_2, LCD_CMD)
-        #lcd_string("Hold")
         lcd.cls()
         lcd.text("Hold")
     if GPIO.input(14) == 1 and old_val == 0:
@@ -349,7 +347,6 @@ while True:
         data = json.loads(resp.text)
 
         for song in reversed(data['songList']):
-            #if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 3라디오","MBC FM4U" ,"CBS 표준 FM"]:
             if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 3라디오", "MBC FM4U"]:
                 continue
             print("#######################################")

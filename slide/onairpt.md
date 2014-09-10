@@ -17,8 +17,6 @@ class: title, center, middle, inverse
 class: center, middle, inverse, full-text
 .full-image[![](IMG_20140910_130116.jpg)]
 
-"방금그라디오"
-
 ---
 class: center, middle, inverse, full-text
 
@@ -56,39 +54,52 @@ class: center, middle, inverse, full-text
 
 # 선연결
 .full-image[![](IMG_20140910_130116.jpg)]
-그림 보고 잘 뽑아 보자
+
 ---
 
-class:  middle, full-text
+class: middle, inverse, full-text
 
 시간이 좀 남았나요?
 
 ---
 class:  middle, inverse, full-text
 
-# 몇 가지 트릭
-
-- 한글 파일 읽기: ["Decode early, encode late"](http://farmdev.com/talks/unicode/)
-
-    ```python
-    >>> with open('somefile.txt', 'r') as f:
-    ...    doc = f.read().decode('utf-8')
-    ```
+# 방금그라디오 소스
+- [onair.py source](https://github.com/onairradio/onairradio.github.io/blob/master/onair.py)
 
     ```python
-    >>> import codecs
-    >>> codecs.open('somefile.txt', encoding='utf-8')
-    ```
+    ....
+    url = 'http://music.daum.net/onair/songlist.json?type=top&searchDate='
+    resp = requests.post(url=url)
+    data = json.loads(resp.text)
 
-- sublee님의 [Hangulize](https://github.com/sublee/hangulize)
+    while True:
+        if isHolding:
+            lcd.cls()
+            lcd.text("Hold")
+        if GPIO.input(14) == 1 and old_val == 0:
+            print("Button 1 pressed")
+            isHolding = not isHolding
+            old_val = 1
+            time.sleep(1)
+        else :
+            old_val = 0
 
-    ```python
-    >>> from hangulize import hangulize
-    >>> print hangulize('Guido van Rossum', 'nld')
-    히도 판로쉼
+        playList = []
+        if time.time() - t > 10 :
+            t = time.time()
+            print("refresh")
+            resp = requests.post(url=url)
+            data = json.loads(resp.text)
+
+            for song in reversed(data['songList']):
+                if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 3라디오", "MBC FM4U"]:
+                    continue
+    ...
     ```
 
 ---
+class:  middle, inverse, full-text
 # 작업
 
 - pcd8544 Python library 설치 https://github.com/XavierBerger/pcd8544
@@ -105,6 +116,7 @@ class:  middle, inverse, full-text
     sudo pip-3.2 install Pillow
     ```
 ---
+class:  middle, inverse, full-text
 # 몇 가지 트릭
 
 - 한글 romanize하기
@@ -129,5 +141,6 @@ class: center, middle, inverse, full-text
 감사합니다 ^_^
 
 http://onairradio.github.io<br>
-[@방금그라디오](kozazz@hanmail.net)
+kozazz@hanmail.net
+
 
