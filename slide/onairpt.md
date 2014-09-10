@@ -4,7 +4,7 @@ layout: true
 ---
 class: title, center, middle, inverse
 
-노래만 나오는 라디오
+실시간 노래만 나오는 라디오
 # <span class="sky">방</span>금 <span class="sky">그</span>  <span class="sky">라</span>디오
 .footnote[
 - [onairradio](https://www.facebook.com/pages/%EB%B0%A9%EA%B8%88%EA%B7%B8%EB%9D%BC%EB%94%94%EC%98%A4/760855817307720) on FaceBook
@@ -82,19 +82,20 @@ class:  middle, inverse, full-text
 
     ```python
     ...
+    ch = {825: (97.3, "KBS1 라디오"), 824: ( 93.1, "KBS FM1")
+    , 827: (106.1, "KBS2 라디오"), 826: ( 89.1, "KBS FM2")
+    , 828: (111, "KBS 3라디오")
+
+    ...
     url = 'http://music.daum.net/onair/songlist.json?type=top&searchDate='
     resp = requests.post(url=url)
     data = json.loads(resp.text)
-
     ...
-
     resp = requests.post(url=url)
     data = json.loads(resp.text)
 
     for song in reversed(data['songList']):
-        if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 3라디오", "MBC FM4U"]:
-            continue
-    ...
+        if song['channel']['channelType'] ...
     ```
 ---
 class: center, middle, inverse, full-text
