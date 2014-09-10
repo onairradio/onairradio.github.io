@@ -1,5 +1,5 @@
 
-![대문](slide/IMG_20140910_130116.jpg)
+![대문](index.jpg)
 
 ### 방금그라디오
 - [슬라이드](slide/index.html)

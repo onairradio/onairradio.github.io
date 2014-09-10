@@ -2,4 +2,4 @@
 
 [slide](slide/index.html)
 
-[gimmick:theme (inverse: false)](cyborg)
+[gimmick:theme (inverse: false)](bootstrap)
