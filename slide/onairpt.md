@@ -1,5 +1,8 @@
 name: inverse
 layout: true
+---
+class: center, middle, inverse, full-text
+.full-image[![](IMG_20140910_130116.jpg)]
 
 ---
 class: title, center, middle, inverse
