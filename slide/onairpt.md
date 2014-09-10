@@ -107,7 +107,7 @@ class: center, middle, inverse, full-text
 
 감사합니다 ^_^
 
-http://onairradio.github.io<br>
+[방금그라디오 facebook](https://www.facebook.com/pages/%EB%B0%A9%EA%B8%88%EA%B7%B8%EB%9D%BC%EB%94%94%EC%98%A4/760855817307720)<br>
 kozazz@hanmail.net
 
 
