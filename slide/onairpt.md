@@ -71,7 +71,6 @@ class:  middle, inverse, full-text
     sudo pip-3.2 install wiringpi
     sudo pip-3.2 install wiringpi2
     sudo pip-3.2 install spidev
-    sudo pip-3.2 install spidev
     sudo pip-3.2 install Pillow
     ```
 ---
