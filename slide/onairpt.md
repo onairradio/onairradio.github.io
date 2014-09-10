@@ -13,10 +13,12 @@ class: title, center, middle, inverse
 ]
 
 ---
-class: center, middle, inverse, full-text
+class: middle, inverse, full-text
 
 http://www.youtube.com/watch?v=kERdJyF-7RM
 <iframe width="560" height="315" src="//www.youtube.com/embed/kERdJyF-7RM" frameborder="0" allowfullscreen></iframe>
+
+aaa
 
 
 ---
