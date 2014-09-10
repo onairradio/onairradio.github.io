@@ -14,7 +14,8 @@ class: title, center, middle, inverse
 
 ---
 class: center, middle, inverse, full-text
-.full-image[![](IMG_20140910_130116.jpg)]
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/kERdJyF-7RM" frameborder="0" allowfullscreen></iframe>
 
 ---
 class: center, middle, inverse, full-text
@@ -95,8 +96,7 @@ class:  middle, inverse, full-text
     ```
 ---
 class: center, middle, inverse, full-text
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/kERdJyF-7RM" frameborder="0" allowfullscreen></iframe>
+.full-image[![](IMG_20140910_130116.jpg)]
 
 ---
 class: center, middle, inverse, full-text
