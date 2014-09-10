@@ -39,7 +39,7 @@ class: center, middle, inverse, full-text
 
 ---
 
-class: center, middle, inverse, full-text
+class: middle, inverse, full-text
 # 준비물
 
 1. [방금그곡api](http://music.daum.net/onair/timeline)
@@ -59,13 +59,14 @@ class: center, middle, inverse, full-text
 그림 보고 잘 뽑아 보자
 ---
 
-class: center, middle, full-text
+class:  middle, full-text
 
 시간이 좀 남았나요?
 
 ---
+class:  middle, inverse, full-text
+
 # 몇 가지 트릭
-class: center, middle, inverse, full-text
 
 - 한글 파일 읽기: ["Decode early, encode late"](http://farmdev.com/talks/unicode/)
 
@@ -88,31 +89,21 @@ class: center, middle, inverse, full-text
     ```
 
 ---
-# 몇 가지 트릭
+# 작업
 
-- 문자의 정체 확인하기
-
+- pcd8544 Python library 설치 https://github.com/XavierBerger/pcd8544
+- pil 라이브러리 python2 에서만 실행.
+- python3 사용하기 위해 Pillow lib 설치.http://pillow.readthedocs.org/en/latest/installation.html
+- 각종 에러가 발생하는데 lcd.py 적절히 수정해 준다.
+- 한글폰트 설치 sudo apt-get install ttf-unfonts-core
+- 그 밖에 각종 설치
     ```python
-    >>> from unicodedata import name
-    >>> print '%s, %s, %s' % (name(u"ㆍ"), name(u"․"), name(u"･"))
-    HANGUL LETTER ARAEA, ONE DOT LEADER, HALFWIDTH KATAKANA MIDDLE DOT
+    sudo pip-3.2 install wiringpi
+    sudo pip-3.2 install wiringpi2
+    sudo pip-3.2 install spidev
+    sudo pip-3.2 install spidev
+    sudo pip-3.2 install Pillow
     ```
-
-    ```python
-    >>> "･".decode("unicode-escape")
-    u'\xef\xbd\xa5'
-    >>> ord(u"･"), repr(u"･")
-    (65381, "u'\\uff65'")
-    ```
-
-- 특수문자를 제외하고 어절을 얻고 싶은 경우
-
-    ```python
-    >>> import regex
-    >>> regex.findall(ur'\p{Hangul}+', u'다람쥐, 헌 쳇바퀴에 타고파.')
-    [u'\ub2e4\ub78c\uc950', u'\ud5cc', u'\uccc7\ubc14\ud034\uc5d0', u'\ud0c0\uace0\ud30c']
-    ```
-
 ---
 # 몇 가지 트릭
 
@@ -135,5 +126,8 @@ class: center, middle, inverse, full-text
 ---
 class: center, middle, inverse, full-text
 
-감사합니다 :D
+감사합니다 ^_^
+
+http://onairradio.github.io<br>
+[@방금그라디오](kozazz@hanmail.net)
 
