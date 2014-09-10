@@ -53,10 +53,11 @@ class: middle, inverse, full-text
 1. [점퍼케이블](http://www.devicemart.co.kr/32284)
 
 ---
-class: center, middle, inverse, full-text
+class: middle, middle, inverse, full-text
 
 # 선연결
-.full-image[![](IMG_20140910_130116.jpg)]
+- https://github.com/XavierBerger/pcd8544
+- ![](https://camo.githubusercontent.com/7e1fdf3d7a138e6bad58c84361114fbc2cea8ff5/68747470733a2f2f7261772e6769746875622e636f6d2f5861766965724265726765722f706364383534342f6d61737465722f646f632f50434438353434776972696e672e706e67)
 ---
 class:  middle, inverse, full-text
 # 작업
