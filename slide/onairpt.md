@@ -57,13 +57,23 @@ class: center, middle, inverse, full-text
 
 # 선연결
 .full-image[![](IMG_20140910_130116.jpg)]
-
 ---
+class:  middle, inverse, full-text
+# 작업
 
-class: middle, inverse, full-text
-
-시간이 좀 남았나요?
-
+- [pcd8544 Python library 설치](https://github.com/XavierBerger/pcd8544)
+- pil 라이브러리 python2 에서만 실행.
+- [python3 사용하기 위해 Pillow lib 설치](http://pillow.readthedocs.org/en/latest/installation.html)
+- 각종 에러가 발생하는데 lcd.py 적절히 수정해 준다.
+- 한글폰트 설치 sudo apt-get install ttf-unfonts-core
+- 그 밖에 각종 설치
+    ```python
+    sudo pip-3.2 install wiringpi
+    sudo pip-3.2 install wiringpi2
+    sudo pip-3.2 install spidev
+    sudo pip-3.2 install spidev
+    sudo pip-3.2 install Pillow
+    ```
 ---
 class:  middle, inverse, full-text
 
@@ -85,24 +95,6 @@ class:  middle, inverse, full-text
         if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 3라디오", "MBC FM4U"]:
             continue
     ...
-    ```
-
----
-class:  middle, inverse, full-text
-# 작업
-
-- [pcd8544 Python library 설치](https://github.com/XavierBerger/pcd8544)
-- pil 라이브러리 python2 에서만 실행.
-- [python3 사용하기 위해 Pillow lib 설치](http://pillow.readthedocs.org/en/latest/installation.html)
-- 각종 에러가 발생하는데 lcd.py 적절히 수정해 준다.
-- 한글폰트 설치 sudo apt-get install ttf-unfonts-core
-- 그 밖에 각종 설치
-    ```python
-    sudo pip-3.2 install wiringpi
-    sudo pip-3.2 install wiringpi2
-    sudo pip-3.2 install spidev
-    sudo pip-3.2 install spidev
-    sudo pip-3.2 install Pillow
     ```
 ---
 class: center, middle, inverse, full-text
