@@ -25,7 +25,7 @@ class: center, middle, inverse, full-text
 
 ".gold[라디오 노래]만 듣고 싶다.<br>
 .gold[광고]는 안듣고 싶은데..<br>
-노래만 골라들으며 안되나요<br>
+노래만 골라들으면 안되나요<br>
 노래만 듣고 싶다. "
 
 .pull-right[-- 노래만 듣고 싶은이]
@@ -45,6 +45,7 @@ class: middle, inverse, full-text
 1. [방금그곡api](http://music.daum.net/onair/timeline)
 1. python3
 1. raspberry pi
+1. [TEA5767 FM 디지털 스테레오 라디오 모듈](http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=A955319132&frm3=V2)
 1. [Nokia 5110 LCD](http://www.devicemart.co.kr/31029)
 1. [스피커](http://www.10x10.co.kr/shopping/category_prd.asp?itemid=898765&rdsite=nvshop_sp&NaPm=ct%3Dhzw68blk%7Cci%3Dd6f9db6ebddfcf32f6bd366d6b80154138ec0cdd%7Ctr%3Dsl%7Csn%3D219718%7Chk%3D69a0516a1216cf93849a469bda19f1d5330d3df7)
 1. [빵판](http://www.devicemart.co.kr/32298)
@@ -62,11 +63,11 @@ class:  middle, inverse, full-text
 # 작업
 
 - [pcd8544 Python library 설치](https://github.com/XavierBerger/pcd8544)
-- pil 라이브러리 python2 에서만 실행.
-- [python3 사용하기 위해 Pillow lib 설치](http://pillow.readthedocs.org/en/latest/installation.html)
-- 각종 에러가 발생하는데 lcd.py 적절히 수정해 준다.
+- pil 라이브러리 python2 에서만 실행;;
+- [python3 사용하기 위해 Pillow lib 설치한다](http://pillow.readthedocs.org/en/latest/installation.html)
+- python3 각종 에러가 발생하는데 lcd.py 적절히 수정해 준다.
 - 한글폰트 설치 sudo apt-get install ttf-unfonts-core
-- 그 밖에 각종 설치
+- 각종 설치
     ```python
     sudo pip-3.2 install wiringpi
     sudo pip-3.2 install wiringpi2
