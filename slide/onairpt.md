@@ -16,6 +16,7 @@ class: title, center, middle, inverse
 class: center, middle, inverse, full-text
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/kERdJyF-7RM" frameborder="0" allowfullscreen></iframe>
+http://www.youtube.com/watch?v=kERdJyF-7RM
 
 ---
 class: center, middle, inverse, full-text
@@ -30,7 +31,7 @@ class: center, middle, inverse, full-text
 ---
 class: center, middle, inverse, full-text
 
-".gold[선곡이짱] 방송국 작가분들에 선곡에 감사합니다.<br>
+".gold[선곡이짱] 방송국 작가분들 선곡에 감사합니다.<br>
 .gold[광고는 NO!] 전하는 말씀은 듣고 싶지 않아요<br>
 실시간 노래가 술술.. 방금 그 라디오!!
 
