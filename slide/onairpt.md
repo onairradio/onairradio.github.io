@@ -35,11 +35,7 @@ class: center, middle, inverse, full-text
 class: center, middle, inverse, full-text
 
 ".gold[선곡이짱] 방송국 작가분들에 선곡에 감사합니다.<br>
- 가을이면 가을노래, 비가 오면 비노래가<br>
 .gold[광고는 NO!] 전하는 말씀은 듣고 싶지 않아요<br>
-방송국 PD들이 선별한 노래가 바로바로
-티비에는 아이돌 노래만 나와서 지겹다? <br>
-하루 종일 틀어 놓아도 좋은 노래가 술술"<br>
 실시간 노래가 술술.. 방금 그 라디오!!
 
 ---
