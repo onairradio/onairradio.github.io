@@ -301,20 +301,14 @@ ch = {825: (97.3, "KBS1 라디오"), 824: ( 93.1, "KBS FM1")
 }
 
 import json, requests
-import sys , time
 from PIL import Image,ImageDraw,ImageFont
 import pcd8544.lcd as lcd
 
-#lcd.init()
-#lcd.cls()
+lcd.init()
+lcd.cls()
 
 # load an available True Type font
 font = ImageFont.truetype("/usr/share/fonts/truetype/unfonts-core/UnBatang.ttf", 14)
-
-# New b-w image
-#im = Image.new('1', (84,48))
-# New drawable on image
-#draw = ImageDraw.Draw(im)
 
 tea = tea5767()
 global isHolding
@@ -328,9 +322,6 @@ resp = requests.post(url=url)
 data = json.loads(resp.text)
 
 while True:
-    if isHolding:
-        lcd.cls()
-        lcd.text("Hold")
     if GPIO.input(14) == 1 and old_val == 0:
         print("Button 1 pressed")
         isHolding = not isHolding
@@ -347,6 +338,7 @@ while True:
         data = json.loads(resp.text)
 
         for song in reversed(data['songList']):
+            #if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 3라디오","MBC FM4U" ,"CBS 표준 FM"]:
             if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 3라디오", "MBC FM4U"]:
                 continue
             print("#######################################")
@@ -368,31 +360,32 @@ while True:
         else:
             recent = playList[-1]
 
-            lcd.init()
             # New b-w image
             im = Image.new('1', (84,48))
             # New drawable on image
             draw = ImageDraw.Draw(im)
 
             lcd.cls()
-            lcd.backlight(1)
+            lcd.backlight(0)
             rTitle = str(ch[int(recent['channel']['channelId'])][1])
             rAddress = str(ch[int(recent['channel']['channelId'])][0])
             song = recent['title']
             title = recent['artistName']
 
-            draw.text((0,0), rTitle, fill=1, font=font)
-            #draw.text((0,12), rAddress, fill=1, font=font)
-            draw.text((0,12), song, fill=1, font=font)
-            draw.text((0,24), title, fill=1, font=font)
+            draw.text((0,-2), rTitle, fill=1, font=font)
+            draw.text((0,10), rAddress, fill=1, font=font)
+            draw.text((0,20), song, fill=1, font=font)
+            draw.text((0,30), title, fill=1, font=font)
 
             # Copy it to the display
             lcd.show_image(im)
             # clean up
-            #del draw
-            #del im
+            del draw
+            del im
 
-            if not isHolding :
+            if isHolding :
+                lcd.text("   Hold  ")
+            else:
                 tea.test(ch[int(recent['channel']['channelId'])][0])
 
 GPIO.cleanup()
