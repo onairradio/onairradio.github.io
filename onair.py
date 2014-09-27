@@ -289,7 +289,7 @@ class tea5767:
 
 ch = {825: (97.3, "KBS1 라디오"), 824: ( 93.1, "KBS FM1")
     , 827: (106.1, "KBS2 라디오"), 826: ( 89.1, "KBS FM2")
-    , 828: (111, "KBS 3라디오")
+    , 828: (111, "KBS 사랑의소리")
     , 832: (95.9, "MBC FM"), 831: (  91.9, "MBC FM4U")
     , 834: (103.5, "SBS 러브 FM"), 835: ( 107.7, "SBS 파워 FM")
     , 822 :( 98.1 ,"CBS 표준 FM"), 821: ( 93.9, "CBS 음악 FM")
@@ -301,6 +301,7 @@ ch = {825: (97.3, "KBS1 라디오"), 824: ( 93.1, "KBS FM1")
 }
 
 import json, requests
+import sys , time
 from PIL import Image,ImageDraw,ImageFont
 import pcd8544.lcd as lcd
 
@@ -309,6 +310,12 @@ lcd.cls()
 
 # load an available True Type font
 font = ImageFont.truetype("/usr/share/fonts/truetype/unfonts-core/UnBatang.ttf", 14)
+
+# New b-w image
+
+#im = Image.new('1', (84,48))
+# New drawable on image
+#draw = ImageDraw.Draw(im)
 
 tea = tea5767()
 global isHolding
@@ -322,6 +329,10 @@ resp = requests.post(url=url)
 data = json.loads(resp.text)
 
 while True:
+#    if isHolding :
+#lcd.cls()
+#lcd.text("Hold")
+#time.sleep(1)
     if GPIO.input(14) == 1 and old_val == 0:
         print("Button 1 pressed")
         isHolding = not isHolding
@@ -338,8 +349,8 @@ while True:
         data = json.loads(resp.text)
 
         for song in reversed(data['songList']):
-            #if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 3라디오","MBC FM4U" ,"CBS 표준 FM"]:
-            if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 3라디오", "MBC FM4U"]:
+            #if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 사랑의소리","MBC FM4U" ,"CBS 표준 FM"]:
+            if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 사랑의소리", "MBC FM4U"]:
                 continue
             print("#######################################")
             print(song['lastUpdate'])
@@ -360,6 +371,7 @@ while True:
         else:
             recent = playList[-1]
 
+            #lcd.init()
             # New b-w image
             im = Image.new('1', (84,48))
             # New drawable on image
