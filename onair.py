@@ -372,7 +372,12 @@ while True:
             tea.test(ch[int(playList[int(sys.argv[1])]['channel']['channelId'])][0])
             break
         else:
-            recent = playList[-1]
+
+            try:
+                recent = playList[-1]
+            except:
+                print("fail get list")
+                continue
 
             #lcd.init()
             # New b-w image
