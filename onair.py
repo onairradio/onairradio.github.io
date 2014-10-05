@@ -345,7 +345,10 @@ while True:
     if time.time() - t > 10 :
         t = time.time()
         print("refresh")
-        resp = requests.post(url=url)
+        try:
+            resp = requests.post(url=url)
+        except:
+            print("fail call")
         data = json.loads(resp.text)
 
         for song in reversed(data['songList']):
