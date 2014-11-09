@@ -353,7 +353,7 @@ while True:
 
         for song in reversed(data['songList']):
             #if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 사랑의소리","MBC FM4U" ,"CBS 표준 FM"]:
-            if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 사랑의소리", "MBC FM4U"]:
+            if song['channel']['channelType'] != "4" or  song['channel']['channelName'] in  ["KBS 사랑의소리", "MBC FM4U", "극동방송"]:
                 continue
             print("#######################################")
             print(song['lastUpdate'])
